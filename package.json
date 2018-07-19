@@ -1,0 +1,17 @@
+{
+  "name": "image-optimization-minimum-kit",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "soarflat",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^5.1.0",
+    "imagemin-svgo": "^6.0.0"
+  },
+  "private": true,
+  "license": "MIT"
+}
