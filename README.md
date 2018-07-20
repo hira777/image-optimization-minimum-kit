@@ -1,6 +1,6 @@
 # image optimization minimum kit
 
-The minimum image optimization using gulp.
+Minimum image optimization using gulp.
 
 ## Installation
 
