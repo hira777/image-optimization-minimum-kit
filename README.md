@@ -25,3 +25,9 @@ or
 ```
 yarn start
 ```
+
+## Demo
+
+Demo page that compare uncompressed images and compressed images.
+
+https://hira777.github.io/image-optimization-minimum-kit/
