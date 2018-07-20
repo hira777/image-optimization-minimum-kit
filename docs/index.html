@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>compare image</title>
+  <style>
+    img {
+      max-width: 100%;
+    }
+
+    .compare {
+      position: fixed;
+      display: flex;
+      background: #000;
+    }
+
+    button {
+      padding: 10px;
+      width: 100px;
+      color: #fff;
+      background: darkgray;
+      cursor: pointer;
+    }
+
+    button.active {
+      background: red;
+      font-size: 1.1rem;
+    }
+
+    .compressed {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="compare">
+    <button id="toUncompressed" class="active">未圧縮</button>
+    <button id="toCompressed">圧縮</button>
+  </div>
+
+  <div class="uncompressed">
+    <img src="./images/uncompressed/olives.jpg">
+  </div>
+  <div class="compressed">
+    <img src="./images/compressed/olives.jpg">
+  </div>
+
+  <div class="uncompressed">
+    <img src="./images/uncompressed/twitter.png">
+  </div>
+  <div class="compressed">
+    <img src="./images/compressed/twitter.png">
+  </div>
+
+  <div class="uncompressed">
+    <img src="./images/uncompressed/validate.svg">
+  </div>
+  <div class="compressed">
+    <img src="./images/compressed/validate.svg">
+  </div>
+</body>
+
+<script>
+  const toUncompressed = document.getElementById('toUncompressed');
+  const toCompressed = document.getElementById('toCompressed');
+  const uncompressed = document.querySelectorAll('.uncompressed');
+  const compressed = document.querySelectorAll('.compressed');
+
+  toUncompressed.addEventListener('click', () => {
+    toUncompressed.classList.add('active')
+    toCompressed.classList.remove('active');
+    updateDisplay({ el: uncompressed, state: 'block' });
+    updateDisplay({ el: compressed, state: 'none' });
+  });
+  toCompressed.addEventListener('click', () => {
+    toCompressed.classList.add('active')
+    toUncompressed.classList.remove('active');
+    updateDisplay({ el: compressed, state: 'block' });
+    updateDisplay({ el: uncompressed, state: 'none' });
+  });
+
+  const updateDisplay = ({ el, state }) => {
+    [...el].forEach(_el => _el.style.display = state);
+  };
+</script>
+
+</html>
